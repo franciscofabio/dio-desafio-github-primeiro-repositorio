@@ -1,0 +1,18 @@
+cp -v -r meudiretorio novo -> copia o diretorio
+cp -v -r . novo -> copia todos os arquivos do diretorio atual para o novo diretorio
+
+find . -> procura td
+find ./ -type f -name "m.txt" -> procura pelo nome do arquivo na pasta atual
+find ./ -type d -name "meu*" -> procura todos os diretorios q contenha meu no inicio
+find ./ -type f -name ".*" -> procura arquivos ocultos
+
+rmdir diretorio -> apaga diretorio vazio
+rm -rf diretorio -> apaga diretorio cheio de arquivos
+
+env - variaveis de ambiente
+mkdir limao -> criei a pasta limao
+l=limao -> criei a variavel limao
+echo $l  -> retorna o valor limao
+export l -> exporta para as variaveis de ambiente env
+cd $l -> vai abrir o diretorio limao
+

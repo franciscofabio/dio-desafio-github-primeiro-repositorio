@@ -1,0 +1,320 @@
+pwd -> traz a saída do caminho local(caminho atual) onde estamos logado, pasta pessoal(Home)
+dir -> lista os diretorios
+ls -> lista os diretorios
+cd -> muda para o diretorio desejado
+mkdir -> cria um diretorio(pasta)
+cd .. -> retorna para diretorio anterior
+cd / -> diretorio raiz linux
+ls -l -> lista detalhes dos diretorios
+cd ~ -> retorna para diretorio pessoal(home)
+history -> listagem de todos os comandos utilizados no terminal até o momento
+seta para cima -> vizualiza ultimos comandos utilizados
+!! -> repetição do ultimo comando executado no terminal
+
+ATALHOS
+shift+fn+print Sc -> Captura de uma area da tela
+Ctrl+Alt+T -> Abre o terminal
+Ctrl+C -> cancela o comando atual em funcionamento
+Ctrl+Z -> pausa comando atual, em primeiro plano ou segundo plano.
+Ctrl+D -> faz o logout da sessão atual
+Ctrl+W -> apaga uma palavra na linha atual
+Ctrl+U -> apaga a linha inteira
+Ctrl+R -> busca um comando recente
+!! -> repete o último comando
+exit -> sai do terminal
+
+mv Teste Linux - renomeando a pasta Teste para Linux
+mv Linux ~ -> move a pasta Linux para diretorio pessoal 
+touch -> cria um arquivo
+mv teste.txt linux.txt -> renomeia o arquivo teste.txt
+cp linux.txt /home/fabio -> faz uma copia do arquivo linux.txt para pasta pessoal
+mv linux.txt /home/fabio/Downloads -> move o arquivo para pasta downloads
+tab -> auto completa
+clear ou ctrl+l -> limpar o terminal
+rmdir -> remover diretorios
+rm -> remove arquivos
+ctrl+d ou exit -> sair do terminal
+
+nano teste.txt -> edita o arquivo no editor nano
+cat teste.txt -> imprime o conteudo do arquivo no terminal
+tac teste.txt -> imprime o conteúdo do arquivo contrario do cat, inverte as linhas
+head teste.txt -> mostra as 10 primeiras linhas do arquivo
+tail teste.txt -> mostra as 10 ultimas linhas
+> -> redirecionamento
+tail teste.txt > distros.txt -> cria um arquivo com a saida do comando tail
+cal -> calendario do mes corrente
+cal 2021 -> calendario do ano 
+cal > calendario_jul.txt -> cria um arquivo com calendario do mes
+date -> mostra data atual
+date >> calendario_jul.txt -> atualiza o arquivo adicionando a nova informação do novo comando
+cal Abril 2021 -> abre o cal de Abril de 2021
+| -> permite uso de dois comandos juntos
+tail distros.txt | grep Mint -> buscar as linhas que tiverem a palavra 'Mint' dentro da selecão do tail
+
+cat distros.txt | grep Suse > suse.txt -> cria um arquivo com o filtro do comando grep
+
+cat teste.txt | more -> o more faz a paginação colocando ao final de cd pagina --Mais-- finaliza ao final
+cat teste.txt | less -> o less faz a paginação colocando : ao final, para finalizar usamos ctrl+z
+
+cat maio.txt & cat calendario_2021.txt -> imprime a vizualização dos dois arquivos com pausa entre eles, quebra de linha
+
+cat maio.txt && cat calendario_2021.txt -> imprime a vizualização dos arquivos sem quebrar o processo em duas linhas, uma saida unica.
+
+mkdir linux_ubuntu && cd linux_ubuntu -> usa o comando para criar a pasta depois usa cd para entrar na pasta
+
+whatis find -> whatis mostra o q o comando faz
+
+ find ~ -name maio.txt -> busca pelo arquivo pelo nome em um diretorio, traz o caminho do arquivo, na pasta pessoal
+ 
+ file -> verifica o tipo do arquivo
+ 
+ rm -r * -> remove todos os arquivos de uma pasta
+ 
+ Tutoriais no site -> guiafoca.org
+ 
+ cd / -> pasta raiz linux
+ 
+ cat /proc/cpuinfo | more -> informações do processador
+ cat /proc/meminfo | more
+ lspci -> visualizar todos os hardwares conectadois via pci
+ lsusb -> visualiza os hardwares conectados via usb
+ 
+ arch -> mostra a arquitetura do sistema Kernel
+ uname -> qual kernel esta usando
+ uname -r -> versao do kernel em uso
+ uname -m -> traz a arquitetura do kernel
+ free -> mostra a saida de memoria fisica e virtual(swap)
+ 
+ du -h ~-> verificar qto o diretorio pessoal esta consumindo no hd, arquivo a arquivo
+ 	h-> é human readable
+ 
+ cat /etc/passwd -> informações dos usuarios
+ reboot -> reinicializa o sistema operacional
+ shutdown -h now -> desliga imediatamente a maquina.
+ lscpu | more -> informações sobre cpu
+ lshw | more -> lista todos os hardwares
+ lshw --short -> caminhos de hardwares
+ 
+ echo "Fabio" -> exibe no terminal o texto
+ echo -e "texto" -> imprime com caracteres especiais
+ 
+ ifconfig -> verifica o ip, pacote (net-tools)
+ hostname -> informções sobre o host(computador na rede)
+ hostname -I -> endereço na rede (IP)
+ hostname -i -> loopback
+ who -> como esta logado na rede, usuario horario
+ whoami -> nome do usuario logado
+ ping -> envia menssagens p determinado host verificando se esta ativo.
+ ping google.com -w 4 ->
+ 
+ dig www.google.com -> todas as informações do dns de um host
+ dig www.google.com +short -> mostra o ip do site(dns)
+ 
+ traceroute www.google.com -> traça rota ate determinado host
+ sudo apt install traceroute
+ sudo apt install whois
+ whois [endereço site] -> informações do dominio
+ 
+ finger -> mostra toda a informação do usuario logado no host
+ w -> mostra informações detalhadas do usuario logado
+ 
+ history -c -> apaga o historico de comandos
+ 
+ alias trc='traceroute' -> cria um apelino(abreviação) para um comando
+ 
+ nl aula.txt -> mostra os dados do arquivo com numero de linhas
+ 
+ wc -l aula.txt -> retorna o total de linhas que o arquivo possui
+ wc -w aula.txt -> conta o numero de palavras no arquivo
+ wc -c aula.txt -> retorna qtd de bytes do arquivo
+ wc -m aula.txt -> retorna a qtd de caracteres do arquivo
+ 
+ ls -F -> coloca uma / no final dos diretorios na listagem
+ ls -a -> mostra os arquivos e diretorios ocultos
+ 
+ lsb_release -a -> mostra versão da distribuição
+ 
+ cmp aquivo1.txt arquivo2.txt  -> compara dois arquivos
+ diff arquivo1.txt arquivo2.txt -> retorna as diferenças entre os arquivos, o q tem em um e  não tem no outro
+ 
+ sort -n vazio.txt -> organiza a saida do documento em ordem numerica
+ 
+ last reboot -> informaçoes sobre reinicialização do sistema
+ 
+ route -n -> mostra todas as tabelas de roteamento do kernel
+ 
+ time -> tempo de um processo
+ time traceroute www.google.com.br -> mostra o tempo que o comando demorou p o sistema e p o usuario
+ 
+ uptime -> informações de carregamento de sistema
+ 
+ cowsay "Linux é Bom" -> mostra no terminal uma vaca falando o texto passado.
+ cowsay -d "Texto"
+ cowsay -g "Texto" -> a vaquinha com $
+ cowsay -f tux "Linux" -> pinquin
+ cowsay -f vader "Linux" -> vaquinha de vader
+ cowsay -f vader-koala "Linux"
+ cowsay -f dragon "Linux"
+ xcowsay "Linux" -> vaquinha em 3d fora do terminal
+ 
+ cmatrix -> imita o efeito matrix
+
+ ----- COMANDOS PARA DESLIGAR MAQUINA ---------
+ shutdown -h now
+ init 0 -> desliga a maquina agora
+ telinit 0 -> desliga a maquina agora
+ halt -> pede altenticação de senha para desligar
+ -----------------------------------------------
+ 
+ seq 1 10 -> imprime sequecia de 1 a 10
+ 
+ whereis ls -> mostra caminho do programa e do manual
+ which ls -> exibe o caminho do programa
+ 
+ logout -> finaliza sessão
+ 
+ ----------------------ADICIONAR USUARIO-----------------------------
+ sudo adduser dio -> cria um usuario com nome dio
+ su nomeadousuario -> muda de usuario
+ passwd nomedousuario -> muda a senha do usuario
+                   | dica de criar senha - 8 caracteres
+                     METODO - ZENIT     fabio | fibae | Fib1e@
+                              POLAR     dio | dae415_
+ 
+ lastlog -> (last | last fabio)informações de login de todos os usuarios
+ id -> mostra ui id do usuario, do grupo, mostra os grupos
+ 
+ cat /etc/passwd -> exibe todos os usuarios
+ userdel -r nomedousuario -> remover um usuario e a pasta pessoal do mesmo
+ 
+ --------------------------- GRUPOS -------------------
+ cat /etc/group -> mostra todos os grupos no sistema
+ groups -> mostra os grupos aos quais o usuario pertence
+ addgroup nomedogrupo -> cria um grupo
+ adduser usuario grupo -> adiciona um usuario a um grupo
+ gpasswd -a userlinux grupoTeste -> adiciona o usuario a um - grupo
+ sudo gpasswd -d userlinux grupotest -> remover usuario de um grupo
+ sudo groupdel nomegrupo -> deleta um grupo
+ ------------------------PERMISSÕES----------------------
+ r - read(leitura)
+ w - write(escrita)
+ x - eXecution(execução)
+ 
+ ls -lh -> exibe tamnaho, data de criação, dono do usuario, permissoes de diretorios
+ d - na frente é diretorio
+ - -> na frete é arquivo
+ ex: drwx|r-x|r-x -> -e um diretorio, tem permissão de leitura, escrita, executar, quem esta no grupo tem permissão de leitura, ñ tem permissão de escrita, tem permissão de execução, r-x os outros q nem estão no grupo tbm ñ tem permissão de escrita.
+ _criador_qEstaNoGrupo_outros
+ 
+ 
+ -------------------MUDAR PERMISSÃO------------------------
+ chmod
+ 
+ sistema octal - 1 digito (dono) ficheiro/diretorio - u
+                 2 digito (grupo) - (g)
+                 3 digito (outros) - (o)
+                 
+ user(owner)  group   other
+ r w x      | r w x | r w x
+ 4 2 1        4 2 1   4 2 1
+     1          0       0    = 100 execução dono               ---x------
+   2            0       0    = 200 escrita dono                --w-------
+ 4              0       0    = 400 leitura dono                -r--------
+   2 1          0       0    = 300 escrita e execução          --wx------
+ 4 2 1          0       0    = 700 leit, escr, exec            -rwx------
+ 4 2 1        4 0 1   4 0 1  = 755 l es ex | esc, ex | esc, ex -rwxr-xr-x
+ 4 2 1        4 2 1   4 2 1  = 777 tudo   p td mundo           -rwxrwxrwx
+     
+ chmod 100 aulasredes.txt | 
+ resultado: ---x------ o dono vai ter de execução os outros nd
+ 
+ 
+ ------------------------- COMPACTADORES ---------------------
+ ->COMPACTAÇÃO
+ * Qto maior a taxa de compactação menor fica o arquivo
+ gzip - compactador muito usado, pussui taxa excelente de compactação
+  gzip arquivo.txt
+  gzip -9 arquivo.txt ->usa taxa compactação maxima
+  
+  zip arquivo.zip arquivo.txt      - manteo os não compactados tbm
+  zip arquivos.zip arquivo1.txt arquivo2.txt
+  
+  bzip2 arquivo.txt
+  
+  rar a arquivo.rar arquivo.txt - necessita ser instalado | ele cria arquivo separado .rar
+  
+ ->DESCOMPACTAÇÃO
+ 
+ gunzip arquivo.txt.gz
+ 
+ unzip arquivo.zip (replace)
+ 
+ bzip2 -d arquivo.bz2
+ 
+ rar x arquivo.rar
+ 
+ 
+ --------------------- ARQUIVADORES -----------------
+ USADOS PARA JUNTAR ARQUIVOS, MAS PODE SER USADO EM CONJUNTO COM COMPAQUITADOR
+ permite arquivar mais de um arquivo.
+ 
+ tar -cf arquivos.tar arquivo1.txt -> arquivando
+ gzip arquivos.tar -> compactando
+ 
+ arquivos.tar.gz -> formato do arquivo arquivado e compactado
+ 
+ Descompactar tar.gz e tar.bz2 :
+ tar -xvf arquivos.tar.gz
+ tar -xvf arquivos.tar.gz -C ~/Documentos/
+ 
+ Descompactar tar.zip tar.rar :
+ 	1 - rar x arquivos.tar.rar
+ 	2 - tar -xvf arquivos.tar -C ~/Documentos/
+ 
+ ------------------PACOTES-------------------------------------
+ sudo apt install nmap -> instalação de pacote
+ sudo apt upgrade nmap -> atualização pacote
+ sudo apt remove nmap -> remover pacote
+ 
+ -----------------ATUALIZAÇÃO DO SISTEMA------------------------
+ apt update && apt upgrade
+ 
+ ------------------INSTALAÇÃO DE PACOTES-------------------------
+ sudo dpkg -i pacote.deb
+ 
+ suso dpkg -I pacote.deb ->obtem descrição
+  sudo dpkg -r pacote.deb ->remove o pacote
+
+-------------FEDORA-------------------------
+sudo rpm -ivh pacote.rpm
+sudo rpm -ivh --nodeps pacote.rpm ->qd falha nas dependencias
+
+sudo rpm -U pacote.rpm ->atualização do pacote
+
+sudo rpm -e pacote.rpm -> remoção de pacote rpm
+
+sudo yum install pacote -> instala um pacote, baixa e instala
+sudo yum install postgresql
+sudo yum update pacote -> atualização do pacote
+sudo yum remove pacote -> remoção de pacote
+ 
+----------------ubuntu-encontrar e deletar---------------
+sudo find /var/ -name "*mongo*" -exec rm -rf {} \;
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
